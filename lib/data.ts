@@ -52,7 +52,7 @@ export const projects = [
     description:
       "A robust admin panel for managing tickets and system operations.",
     url: "https://ticket-kite-admin-panel.vercel.app/",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    technologies: ["Next.js", "React", "TypeScript", "TailwindCSS"],
   },
 ];
 
@@ -67,5 +67,5 @@ export const skills = [
   "React",
   "Node.js",
   "TypeScript",
-  "Tailwind CSS",
+  "Tailwind",
 ];

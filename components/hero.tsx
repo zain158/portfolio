@@ -1,71 +1,117 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, Mail, Linkedin, MapPin, Phone, Code, Database, Zap, Sparkles, Rocket } from "lucide-react";
+import {
+  Download,
+  Mail,
+  Linkedin,
+  MapPin,
+  Phone,
+  Code,
+  Database,
+  Zap,
+  Sparkles,
+} from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { personalInfo, skills, projects } from "@/lib/data";
 
 export function Hero() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
-    <main className="min-h-screen pt-24 pb-20 relative overflow-hidden">
+    <main className="min-h-screen pt-32 pb-20 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#335c67]/10 via-transparent to-[#ddb892]/10" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
+
+      {/* Moving Banner - Button Style */}
+      <div className="fixed top-20 left-0 w-full overflow-hidden py-4 z-40 pointer-events-none">
+        <motion.div
+          className="flex items-center gap-8 whitespace-nowrap"
+          animate={{
+            x: ["0%", "-50%"],
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 15,
+              ease: "linear",
+            },
+          }}
+        >
+          {[...Array(10)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#335c67]/20 backdrop-blur-sm border border-[#335c67]/30 shadow-sm flex-shrink-0"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Sparkles className="w-4 h-4 text-[#335c67] animate-pulse" />
+              <span className="text-sm font-medium text-[#335c67] whitespace-nowrap">
+                Available for Opportunities
+              </span>
+            </motion.div>
+          ))}
+          {/* Duplicate set for seamless loop */}
+          {[...Array(10)].map((_, i) => (
+            <motion.div
+              key={`duplicate-${i}`}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#335c67]/20 backdrop-blur-sm border border-[#335c67]/30 shadow-sm flex-shrink-0"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Sparkles className="w-4 h-4 text-[#335c67] animate-pulse" />
+              <span className="text-sm font-medium text-[#335c67] whitespace-nowrap">
+                Available for Opportunities
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-20"
+          className="text-left mb-20 max-w-5xl"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", delay: 0.2 }}
-            className="inline-block mb-6"
-          >
-            <div className="w-20 h-20 rounded-full bg-[#335c67] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#335c67]/30">
-              <Rocket className="w-10 h-10 text-white" />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#335c67]/20 backdrop-blur-sm border border-[#335c67]/30 mb-6 shadow-sm"
-          >
-            <Sparkles className="w-4 h-4 text-[#335c67] animate-pulse" />
-            <span className="text-sm font-medium text-[#335c67]">Available for Opportunities</span>
-          </motion.div>
-
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            <span className="block bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mb-2">
+            <motion.span
+              className="block bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mt-2 mb-2 cursor-default"
+              whileHover={{
+                scale: 1.05,
+                x: 10,
+                transition: { duration: 0.3, ease: "easeOut" },
+              }}
+            >
               MERN STACK
-            </span>
-            <span className="block text-[#335c67]">
+            </motion.span>
+            <motion.span
+              className="block text-[#335c67] cursor-default"
+              whileHover={{
+                scale: 1.05,
+                x: 10,
+                color: "#2a4a52",
+                transition: { duration: 0.3, ease: "easeOut" },
+              }}
+            >
               DEVELOPER
-            </span>
+            </motion.span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5, type: "spring", stiffness: 80 }}
+            whileHover={{
+              x: 8,
+              scale: 1.01,
+              transition: { duration: 0.3, ease: "easeOut" },
+            }}
+            className="text-xl md:text-2xl text-muted-foreground max-w-5xl mb-8 leading-relaxed cursor-default"
           >
             {personalInfo.summary}
           </motion.p>
@@ -75,7 +121,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-wrap gap-4 justify-center mb-12"
+            className="flex flex-wrap gap-4 justify-start mb-12"
           >
             <Link href="/contact">
               <motion.div
@@ -104,11 +150,19 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="flex flex-wrap gap-6 justify-center text-sm"
+            className="flex flex-wrap gap-6 justify-start text-sm"
           >
             {[
-              { icon: Mail, href: `mailto:${personalInfo.email}`, text: personalInfo.email },
-              { icon: Phone, href: `tel:${personalInfo.phone}`, text: personalInfo.phone },
+              {
+                icon: Mail,
+                href: `mailto:${personalInfo.email}`,
+                text: personalInfo.email,
+              },
+              {
+                icon: Phone,
+                href: `tel:${personalInfo.phone}`,
+                text: personalInfo.phone,
+              },
               { icon: MapPin, href: null, text: personalInfo.location },
               { icon: Linkedin, href: personalInfo.linkedin, text: "LinkedIn" },
             ].map((item, idx) => {
@@ -124,7 +178,16 @@ export function Hero() {
               );
 
               return item.href ? (
-                <a key={idx} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}>
+                <a
+                  key={idx}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    item.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                >
                   {content}
                 </a>
               ) : (
@@ -144,8 +207,16 @@ export function Hero() {
         >
           {[
             { label: "Years Experience", value: "3+", icon: Code },
-            { label: "Projects Completed", value: projects.length.toString(), icon: Database },
-            { label: "Technologies", value: skills.length.toString(), icon: Zap },
+            {
+              label: "Projects Completed",
+              value: projects.length.toString(),
+              icon: Database,
+            },
+            {
+              label: "Technologies",
+              value: skills.length.toString(),
+              icon: Zap,
+            },
             { label: "Location", value: "Pakistan", icon: MapPin },
           ].map((stat, idx) => {
             const Icon = stat.icon;
@@ -158,42 +229,46 @@ export function Hero() {
                 transition={{ delay: idx * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="bg-gradient-to-br from-[#335c67]/10 to-[#ddb892]/10 backdrop-blur-sm border-2 border-[#335c67]/20 rounded-2xl p-6 text-center shadow-lg"
-                >
-                  <Icon className="w-8 h-8 mx-auto mb-3 text-[#335c67]" />
-                  <div className="text-3xl font-bold mb-1 text-[#335c67]">{stat.value}</div>
-                <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
+              >
+                <Icon className="w-8 h-8 mx-auto mb-3 text-[#335c67]" />
+                <div className="text-3xl font-bold mb-1 text-[#335c67]">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  {stat.label}
+                </div>
               </motion.div>
             );
           })}
         </motion.div>
 
         {/* Core Skills Preview */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-[#335c67]/5 to-[#ddb892]/5 backdrop-blur-sm border-2 border-[#335c67]/20 rounded-3xl p-10 shadow-xl mb-20"
-          >
-            <h2 className="text-3xl font-bold mb-8 text-center text-[#335c67]">
-              Core Technologies
-            </h2>
-            <div className="flex flex-wrap gap-3 justify-center">
-              {skills.slice(0, 12).map((skill, index) => (
-                <motion.span
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05, type: "spring" }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="px-5 py-2.5 bg-[#ddb892] text-[#335c67] rounded-xl text-sm font-semibold border-2 border-[#ddb892] shadow-sm hover:bg-[#ddb892]/90 transition-colors"
-                >
-                  {skill}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-br from-[#335c67]/5 to-[#ddb892]/5 backdrop-blur-sm border-2 border-[#335c67]/20 rounded-3xl p-10 shadow-xl mb-20"
+        >
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#335c67]">
+            Core Technologies
+          </h2>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {skills.slice(0, 12).map((skill, index) => (
+              <motion.span
+                key={skill}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05, type: "spring" }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="px-5 py-2.5 bg-[#ddb892] text-[#335c67] rounded-xl text-sm font-semibold border-2 border-[#ddb892] shadow-sm hover:bg-[#ddb892]/90 transition-colors"
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Featured Projects Preview */}
         <motion.div
