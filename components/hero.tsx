@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  Download,
   Mail,
   Linkedin,
   MapPin,
@@ -11,6 +10,7 @@ import {
   Database,
   Zap,
   Sparkles,
+  FileText,
 } from "lucide-react";
 import Link from "next/link";
 import { personalInfo, skills, projects } from "@/lib/data";
@@ -80,7 +80,7 @@ export function Hero() {
             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
             <motion.span
-              className="block bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mt-2 mb-2 cursor-default"
+              className="block bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mt-4 mb-2 cursor-default"
               whileHover={{
                 scale: 1.05,
                 x: 10,
@@ -133,16 +133,16 @@ export function Hero() {
                 Get In Touch
               </motion.div>
             </Link>
-            <a href="/cv.pdf" download>
+            <Link href="/cv">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[#ddb892] text-[#335c67] border-2 border-[#ddb892] rounded-xl font-semibold hover:bg-[#ddb892]/90 transition-all shadow-lg"
               >
-                <Download className="w-5 h-5" />
-                Download CV
+                <FileText className="w-5 h-5" />
+                Show CV
               </motion.div>
-            </a>
+            </Link>
           </motion.div>
 
           {/* Contact Info */}

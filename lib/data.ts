@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Zain Ali Malik",
   title: "Full-Stack Developer | MERN Stack | Next.js | Remix",
   email: "mz279718@gmail.com",
-  phone: "+923180066290",
+  phone: "890808909",
   location: "Faisalabad, Pakistan",
   linkedin: "https://www.linkedin.com/in/malik-zain-85083b310",
   summary:

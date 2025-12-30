@@ -49,7 +49,7 @@ The portfolio includes:
 ## Next Steps
 
 1. **Add your banner image** - Place `banner.jpg` in the `public` folder
-2. **Add your CV** - Place `cv.pdf` in the `public` folder for the download button
+2. **Add your CV** - Place `Zain_Ali_Malik_Blue_CV.pdf` in the `public` folder for the download button
 3. **Customize** - Adjust colors in `app/globals.css` if desired
 4. **Connect Contact Form** - Set up email service (Formspree, EmailJS, etc.)
 
