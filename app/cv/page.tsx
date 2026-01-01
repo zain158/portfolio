@@ -42,8 +42,8 @@ export default function CV() {
   return (
     <main className="min-h-screen pt-24 pb-20 relative overflow-hidden">
       {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#335c67]/10 via-transparent to-[#ddb892]/10" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#335c67]/10 via-transparent to-[#ddb892]/10 dark:from-[#335c67]/20 dark:via-transparent dark:to-[#ddb892]/20 transition-colors duration-500" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:24px_24px] transition-opacity duration-500" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* CV Content */}
@@ -58,14 +58,14 @@ export default function CV() {
             disabled={isGenerating}
             whileHover={{ scale: isGenerating ? 1 : 1.05, y: -2 }}
             whileTap={{ scale: isGenerating ? 1 : 0.98 }}
-            className="absolute top-4 right-4 inline-flex items-center gap-2 px-5 py-2.5 bg-[#ddb892] text-[#335c67] rounded-xl font-semibold shadow-lg shadow-[#ddb892]/30 hover:shadow-xl hover:shadow-[#ddb892]/40 border-2 border-[#ddb892] hover:bg-[#ddb892]/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10 backdrop-blur-sm"
+            className="absolute top-4 right-4 inline-flex items-center gap-2 px-5 py-2.5 bg-[#ddb892] dark:bg-[#6ba8b5] text-[#335c67] dark:text-[#1a1a1a] rounded-xl font-semibold shadow-lg shadow-[#ddb892]/30 dark:shadow-[#6ba8b5]/30 hover:shadow-xl hover:shadow-[#ddb892]/40 dark:hover:shadow-[#6ba8b5]/40 border-2 border-[#ddb892] dark:border-[#6ba8b5] hover:bg-[#ddb892]/90 dark:hover:bg-[#5a9caa] transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed z-10 backdrop-blur-sm"
           >
             <FileText className="w-4 h-4" />
             <span className="text-sm font-medium">{isGenerating ? "Generating..." : "Download PDF"}</span>
           </motion.button>
           {/* Header */}
           <div className="mb-8 pb-6 border-b-2 border-[#335c67]">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#335c67] mb-3">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#335c67] dark:text-[#6ba8b5] mb-3 transition-colors duration-500">
               {personalInfo.name.toUpperCase()}
             </h1>
             <p className="text-lg text-gray-600 mb-5">{personalInfo.title}</p>
@@ -80,7 +80,7 @@ export default function CV() {
 
           {/* Professional Summary */}
           <section className="mb-8">
-            <h2 className="text-xl font-bold text-[#335c67] mb-3 uppercase tracking-wide">
+            <h2 className="text-xl font-bold text-[#335c67] dark:text-[#ddb892] mb-3 uppercase tracking-wide transition-colors duration-500">
               PROFESSIONAL SUMMARY
             </h2>
             <p className="text-gray-700 leading-relaxed text-justify">{personalInfo.summary}</p>
@@ -94,7 +94,7 @@ export default function CV() {
             {experience.map((exp, idx) => (
               <div key={idx} className="mb-5">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-[#335c67]">
+                  <h3 className="text-lg font-semibold text-[#335c67] dark:text-[#ddb892] transition-colors duration-500">
                     {exp.position} - {exp.company}
                   </h3>
                   <span className="text-sm text-gray-600">{exp.period}</span>
@@ -131,7 +131,7 @@ export default function CV() {
               {projects.map((project, idx) => (
                 <div key={idx} className="mb-3">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-semibold text-[#335c67]">{project.name}:</h3>
+                    <h3 className="text-lg font-semibold text-[#335c67] dark:text-[#ddb892] transition-colors duration-500">{project.name}:</h3>
                     <a
                       href={project.url}
                       target="_blank"
