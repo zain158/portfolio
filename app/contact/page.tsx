@@ -46,8 +46,8 @@ export default function Contact() {
   return (
     <main className="min-h-screen pt-24 pb-20 relative overflow-hidden">
       {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#335c67]/5 via-transparent to-[#ddb892]/5" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#335c67]/5 via-transparent to-[#ddb892]/5 dark:from-[#335c67]/15 dark:via-transparent dark:to-[#ddb892]/15 transition-colors duration-500" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:24px_24px] transition-opacity duration-500" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -70,7 +70,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl md:text-6xl font-bold mb-4 text-[#335c67]"
+            className="text-5xl md:text-6xl font-bold mb-4 text-[#335c67] dark:text-[#6ba8b5] transition-colors duration-500"
           >
             Get In Touch
           </motion.h1>
@@ -98,8 +98,8 @@ export default function Contact() {
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#335c67]/10 rounded-full blur-3xl" />
               <div className="relative z-10">
-                <h2 className="text-3xl font-bold mb-8 flex items-center gap-3 text-[#335c67]">
-                  <Zap className="w-8 h-8 text-[#335c67]" />
+                <h2 className="text-3xl font-bold mb-8 flex items-center gap-3 text-[#335c67] dark:text-[#6ba8b5] transition-colors duration-500">
+                  <Zap className="w-8 h-8 text-[#335c67] dark:text-[#6ba8b5] transition-colors duration-500" />
                   Contact Information
                 </h2>
                 <div className="space-y-4">
@@ -188,8 +188,8 @@ export default function Contact() {
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#335c67]/10 rounded-full blur-3xl" />
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-8 flex items-center gap-3 text-[#335c67]">
-                <Send className="w-8 h-8 text-[#335c67]" />
+              <h2 className="text-3xl font-bold mb-8 flex items-center gap-3 text-[#335c67] dark:text-[#6ba8b5] transition-colors duration-500">
+                <Send className="w-8 h-8 text-[#335c67] dark:text-[#6ba8b5] transition-colors duration-500" />
                 Send a Message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
