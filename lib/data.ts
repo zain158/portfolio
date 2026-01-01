@@ -69,3 +69,85 @@ export const skills = [
   "TypeScript",
   "Tailwind",
 ];
+
+export const clientReviews = [
+  {
+    id: 1,
+    clientName: "John Smith",
+    clientCompany: "Tech Innovations Inc.",
+    clientRole: "CEO",
+    clientAvatar: "JS",
+    projectName: "Watch Ledger App",
+    rating: 5,
+    review:
+      "Zain delivered an exceptional watch ledger management system that exceeded our expectations. The application is user-friendly, scalable, and perfectly tailored to our business needs. His attention to detail and technical expertise made the entire development process smooth and efficient.",
+    date: "March 2024",
+  },
+  {
+    id: 2,
+    clientName: "Sarah Johnson",
+    clientCompany: "EventPro Solutions",
+    clientRole: "Project Manager",
+    clientAvatar: "SJ",
+    projectName: "Ticketing App",
+    rating: 5,
+    review:
+      "Working with Zain on our ticketing application was a fantastic experience. He demonstrated deep understanding of our requirements and delivered a high-performance platform that handles thousands of concurrent users seamlessly. The code quality and documentation were outstanding.",
+    date: "January 2024",
+  },
+  {
+    id: 3,
+    clientName: "Michael Chen",
+    clientCompany: "Enterprise Systems",
+    clientRole: "CTO",
+    clientAvatar: "MC",
+    projectName: "Admin Panel",
+    rating: 5,
+    review:
+      "Zain's expertise in building robust admin panels is remarkable. The system he developed for us is not only feature-rich but also highly secure and maintainable. His proactive approach to problem-solving and commitment to deadlines made him an invaluable partner.",
+    date: "November 2023",
+  },
+  {
+    id: 4,
+    clientName: "Emily Rodriguez",
+    clientCompany: "StartupHub",
+    clientRole: "Founder",
+    clientAvatar: "ER",
+    projectName: "Watch Ledger App",
+    rating: 5,
+    review:
+      "Zain transformed our vision into reality with the Watch Ledger App. His ability to understand complex business logic and translate it into clean, efficient code is impressive. The application has significantly improved our operational efficiency.",
+    date: "February 2024",
+  },
+];
+
+export const projectBudgets = [
+  {
+    projectName: "Watch Ledger App",
+    budget: "$3,000",
+    duration: "3 months",
+    status: "Completed",
+    client: "Tech Innovations Inc.",
+  },
+  {
+    projectName: "Ticketing App",
+    budget: "$2,800",
+    duration: "4 months",
+    status: "Completed",
+    client: "EventPro Solutions",
+  },
+  {
+    projectName: "Admin Panel",
+    budget: "$4,700",
+    duration: "2.5 months",
+    status: "Completed",
+    client: "Enterprise Systems",
+  },
+];
+
+export const totalProjectsStats = {
+  totalProjects: projectBudgets.length,
+  totalBudget: "$10,500",
+  averageBudget: "$3,500",
+  completionRate: "100%",
+};
