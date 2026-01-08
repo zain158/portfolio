@@ -26,7 +26,7 @@ export function QuickStats() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
+      className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-20"
     >
       {stats.map((stat, idx) => {
         const Icon = stat.icon;
@@ -38,15 +38,15 @@ export function QuickStats() {
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
             whileHover={{ y: -10, scale: 1.02 }}
-            className="relative bg-gradient-to-br from-[#335c67]/15 to-[#ddb892]/15 dark:from-[#335c67]/20 dark:to-[#ddb892]/20 backdrop-blur-md border-2 border-[#335c67]/30 dark:border-[#ddb892]/30 rounded-2xl p-6 text-center shadow-xl hover:shadow-2xl overflow-hidden group transition-colors duration-500"
+            className="relative bg-gradient-to-br from-[#335c67]/15 to-[#ddb892]/15 dark:from-[#335c67]/20 dark:to-[#ddb892]/20 backdrop-blur-md border-2 border-[#335c67]/30 dark:border-[#ddb892]/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center shadow-xl hover:shadow-2xl overflow-hidden group transition-colors duration-500"
           >
             <motion.div className="absolute inset-0 bg-gradient-to-br from-[#335c67]/20 to-[#ddb892]/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             <motion.div className="absolute top-0 right-0 w-24 h-24 bg-[#335c67]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-            <Icon className="w-8 h-8 mx-auto mb-3 text-[#335c67] dark:text-[#6ba8b5] relative z-10 group-hover:scale-110 transition-transform" />
-            <div className="text-3xl font-bold mb-1 text-[#335c67] dark:text-[#6ba8b5] relative z-10 transition-colors duration-500">
+            <Icon className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-[#335c67] dark:text-[#6ba8b5] relative z-10 group-hover:scale-110 transition-transform" />
+            <div className="text-2xl sm:text-3xl font-bold mb-1 text-[#335c67] dark:text-[#6ba8b5] relative z-10 transition-colors duration-500">
               {stat.value}
             </div>
-            <div className="text-sm text-muted-foreground font-medium relative z-10">
+            <div className="text-xs sm:text-sm text-muted-foreground font-medium relative z-10">
               {stat.label}
             </div>
           </motion.div>

@@ -19,7 +19,7 @@ export function HeroContent() {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 relative mt-8 md:mt-12"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 relative mt-4 sm:mt-8 md:mt-12"
         >
           <span className="block bg-gradient-to-r from-[#335c67] via-[#4a7c8a] to-[#335c67] dark:from-[#6ba8b5] dark:via-[#5a9caa] dark:to-[#6ba8b5] bg-clip-text text-transparent mt-4 mb-2 transition-colors duration-500">
             MERN STACK
@@ -49,7 +49,7 @@ export function HeroContent() {
             scale: 1.01,
             transition: { duration: 0.3, ease: "easeOut" },
           }}
-          className="text-xl md:text-2xl text-muted-foreground max-w-5xl mb-8 leading-relaxed cursor-default"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-5xl mb-6 sm:mb-8 leading-relaxed cursor-default"
         >
           {personalInfo.summary}
         </motion.p>
@@ -59,13 +59,13 @@ export function HeroContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="flex flex-wrap gap-4 justify-start mb-12"
+          className="flex flex-wrap gap-3 sm:gap-4 justify-start mb-8 sm:mb-12"
         >
           <Link href="/contact">
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#335c67] to-[#4a7c8a] text-white rounded-xl font-semibold shadow-lg shadow-[#335c67]/40 hover:shadow-2xl hover:shadow-[#335c67]/50 transition-all overflow-hidden group"
+              className="relative inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-[#335c67] to-[#4a7c8a] text-white rounded-xl text-sm sm:text-base font-semibold shadow-lg shadow-[#335c67]/40 hover:shadow-2xl hover:shadow-[#335c67]/50 transition-all overflow-hidden group"
             >
               <motion.div className="absolute inset-0 bg-gradient-to-r from-[#4a7c8a] to-[#335c67] opacity-0 group-hover:opacity-100 transition-opacity" />
               <motion.div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -77,7 +77,7 @@ export function HeroContent() {
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#ddb892] to-[#c9a572] text-[#335c67] border-2 border-[#ddb892] rounded-xl font-semibold hover:border-[#c9a572] transition-all shadow-lg hover:shadow-xl overflow-hidden group"
+              className="relative inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-[#ddb892] to-[#c9a572] text-[#335c67] border-2 border-[#ddb892] rounded-xl text-sm sm:text-base font-semibold hover:border-[#c9a572] transition-all shadow-lg hover:shadow-xl overflow-hidden group"
             >
               <motion.div className="absolute inset-0 bg-gradient-to-r from-[#c9a572] to-[#ddb892] opacity-0 group-hover:opacity-100 transition-opacity" />
               <motion.div className="absolute inset-0 bg-[#335c67]/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -92,7 +92,7 @@ export function HeroContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="flex flex-wrap gap-6 justify-start text-sm"
+          className="flex flex-wrap gap-4 sm:gap-6 justify-start text-xs sm:text-sm"
         >
           {[
             {
@@ -143,12 +143,12 @@ export function HeroContent() {
         </motion.div>
       </motion.div>
 
-      {/* Profile Image */}
+      {/* Profile Image - Hidden on small screens */}
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
-        className="flex-shrink-0 w-full lg:w-auto mt-8 md:mt-12"
+        className="hidden md:block flex-shrink-0 w-full lg:w-auto mt-8 md:mt-12"
       >
         <div className="relative w-64 h-80 md:w-80 md:h-96 lg:w-96 lg:h-[500px] mx-auto lg:mx-0">
           <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-[#335c67]/20 dark:border-[#6ba8b5]/30">
